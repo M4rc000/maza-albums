@@ -1,6 +1,5 @@
 'use client'
 
-import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import Activity from "../components/Activity";
 import Footer from "../components/Footer";
@@ -12,7 +11,7 @@ export default function About() {
       {/* HERO & NAVBAR SECTION */}
       <section className="relative bg-slate-950">
         <Navbar />    
-        <Hero/>
+        {/* <Hero/> */}
         {/* Wave Divider as a background effect */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
           <svg className="relative block w-full mt-40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

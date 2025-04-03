@@ -1,11 +1,10 @@
 "use client"
 
 import Navbar from "../components/Navbar"
-import Hero from "../components/Hero"
-import Activity from "../components/Activity"
 import Footer from "../components/Footer"
 import {ParallaxProvider} from "react-scroll-parallax"
-
+import CardTile from "@/components/CardTile"
+import PhotosHero from "../components/PhotosHero"
 
 export default function Photos() {
     return (
@@ -13,7 +12,7 @@ export default function Photos() {
             {/* HERO & NAVBAR SECTION */}
             <section className="relative bg-slate-950">
             <Navbar />    
-            <Hero/>
+            <PhotosHero/>
             {/* Wave Divider as a background effect */}
             <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
                 <svg className="relative block w-full mt-40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -24,7 +23,7 @@ export default function Photos() {
     
             {/* ACTIVITY SECTION */}
             <section className="bg-[#0a0a0a] pt-10 pb-20">
-                <Activity/>     
+                <CardTile/>     
             </section>
     
             <section className="bg-[#030619]">

@@ -1,18 +1,6 @@
 import Image from 'next/image'
 import { useEffect, useState, useRef } from 'react'
-
-const cardImages = [
-  '/assets/images/card/1.webp',
-  '/assets/images/card/2.webp',
-  '/assets/images/card/3.webp',
-  '/assets/images/card/4.webp',
-  '/assets/images/card/5.webp',
-  '/assets/images/card/6.webp',
-  '/assets/images/card/7.webp',
-  '/assets/images/card/8.webp',
-  '/assets/images/card/9.webp',
-  '/assets/images/card/10.webp',
-];
+import cardImages from '../sources/cardImages'
 
 interface CardProps {
   src: string;
