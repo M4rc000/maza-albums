@@ -1,17 +1,17 @@
 'use client'
 
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import CardGrid from "./components/CardGrid";
-import Footer from "./components/Footer";
+import Hero from "../components/Hero";
+import Navbar from "../components/Navbar";
+import Activity from "../components/Activity";
+import Footer from "../components/Footer";
 import { ParallaxProvider } from "react-scroll-parallax";
 
-export default function Home() {
+export default function About() {
   return (
     <ParallaxProvider>
       {/* HERO & NAVBAR SECTION */}
       <section className="relative bg-slate-950">
-        <Navbar />
+        <Navbar />    
         <Hero/>
         {/* Wave Divider as a background effect */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
@@ -21,13 +21,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ABOUT / NEWEST SECTION */}
-      <section className="bg-[#0a0a0a] pt-20 pb-20">
-        <div className="mx-20">
-          <h2 className="text-white font-bold text-3xl border-b-2 border-indigo-600 inline-block">Newest</h2>
-        </div>
-        <CardGrid />
-      </section>
+      {/* ACTIVITY SECTION */}
+        <section className="bg-[#0a0a0a] pt-10 pb-20">
+            <Activity/>     
+        </section>
 
       <section className="bg-[#030619]">
         <Footer/>
