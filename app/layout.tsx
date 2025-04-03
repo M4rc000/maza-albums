@@ -25,8 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" className="rounded-xl"/>
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <AntdRegistry>{children}</AntdRegistry>
+        <AntdRegistry>{children}</AntdRegistry>
       </body>
     </html>
   );
