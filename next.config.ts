@@ -5,7 +5,6 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["@chakra-ui/react"],
   },
   output: 'export',
-  basePath: "/maza-albums",
 };
 
 export default nextConfig;
