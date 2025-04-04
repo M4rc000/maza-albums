@@ -29,7 +29,10 @@ export default function RootLayout({
         <link rel="icon" href="./assets/favicon.ico" sizes="any" type="image/x-icon"/>
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <AntdRegistry>{children}</AntdRegistry>
+        {/* <div className="flex"> */}
+          {/* <Sidebar /> */}
+          <AntdRegistry>{children}</AntdRegistry>
+        {/* </div> */}
       </body>
     </html>
   );

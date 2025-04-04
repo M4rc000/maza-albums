@@ -18,7 +18,7 @@ export default function Navbar() {
   const pathname = usePathname() // Dapatkan path saat ini
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
+    <header className="fixed top-0 w-full z-50 bg-opacity-80 backdrop-blur-md transition-all duration-300">
       <nav
         aria-label="Global"
         className="flex items-center justify-between p-6 lg:px-8"
