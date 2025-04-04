@@ -3,7 +3,7 @@
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import {ParallaxProvider} from "react-scroll-parallax"
-import CardTile from "@/components/CardTile"
+import CardTile from "../components/CardTile"
 import PhotosHero from "../components/PhotosHero"
 
 export default function Photos() {
