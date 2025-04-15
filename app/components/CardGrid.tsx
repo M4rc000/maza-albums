@@ -3,14 +3,14 @@ import { useEffect, useState, useRef } from 'react'
 import cardImages from '../sources/cardImages'
 
 interface CardProps {
-  src: string;
-  index: number;
-  columnCount: number;
+  src: string
+  index: number
+  columnCount: number
 }
 
 function Card({ src, index, columnCount }: CardProps) {
   const [visible, setVisible] = useState(false)
-  const cardRef = useRef(null)
+  const cardRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,7 +28,6 @@ function Card({ src, index, columnCount }: CardProps) {
     return () => observer.disconnect()
   }, [])
 
-  // compute the row based on the current column count
   const row = Math.floor(index / columnCount)
   const initialTranslate = row === 0 ? '-translate-x-10' : 'translate-x-10'
   const animatedClasses = visible
@@ -38,7 +37,8 @@ function Card({ src, index, columnCount }: CardProps) {
   return (
     <div
       ref={cardRef}
-      className={`w-full max-w-[300px] text-center mt-1 transition-all duration-1000 ${animatedClasses}`}>
+      className={`w-full max-w-[300px] text-center mt-1 transition-all duration-1000 cursor-pointer ${animatedClasses}`}
+    >
       <div className="relative h-[180px] bg-red-400 rounded-xl overflow-visible">
         <Image
           src={src}
@@ -53,15 +53,14 @@ function Card({ src, index, columnCount }: CardProps) {
 }
 
 export default function CardGrid() {
-  // Dynamically compute the number of columns based on window width
   const [columnCount, setColumnCount] = useState(5)
 
   const getColumnCount = () => {
-    const width = window.innerWidth;
-    if (width < 640) return 1      // mobile: single column
-    if (width < 768) return 2      // small screens: 2 cols
-    if (width < 1024) return 3     // medium screens: 3 cols
-    return 5                     // large screens: 5 cols
+    const width = window.innerWidth
+    if (width < 640) return 1      // mobile: 1 kolom
+    if (width < 768) return 2      // layar kecil: 2 kolom
+    if (width < 1024) return 3     // layar menengah: 3 kolom
+    return 5                     // layar besar: 5 kolom
   }
 
   useEffect(() => {
@@ -74,11 +73,17 @@ export default function CardGrid() {
   }, [])
 
   return (
-    <div
-      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-center mx-18 mt-5 space-x-3 gap-x-2 gap-y-2 items-start">
-      {cardImages.map((src, index) => (
-        <Card key={index} src={src} index={index} columnCount={columnCount} />
-      ))}
-    </div>
+    <>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-center mx-18 mt-5 space-x-3 gap-x-2 gap-y-2 items-start">
+        {cardImages.map((src, index) => (
+          <Card
+            key={index}
+            src={src}
+            index={index}
+            columnCount={columnCount}
+          />
+        ))}
+      </div>
+    </>
   )
 }
