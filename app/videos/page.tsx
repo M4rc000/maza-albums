@@ -4,7 +4,15 @@ import { Play, Volume2, Maximize } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
-const videoData = [
+// Definisikan interface untuk bentuk data video
+interface Video {
+  id: number;
+  title: string;
+  duration: string;
+  thumbnail: string;
+}
+
+const videoData: Video[] = [
   { id: 1, title: "TimeZone 24 July 2024 Part 1", duration: "2:15", thumbnail: "/assets/videos/video/1.mp4" },
   { id: 2, title: "TimeZone 24 July 2024 Part 2", duration: "2:15", thumbnail: "/assets/videos/video/2.mp4" },
 ]
@@ -85,9 +93,15 @@ function VideosHero() {
   )
 }
 
-function VideoCard({ video, index }) {
+// Definisikan interface untuk props VideoCard
+interface VideoCardProps {
+  video: Video;
+  index: number;
+}
+
+function VideoCard({ video, index }: VideoCardProps) {
   const [isHovered, setIsHovered] = useState(false)
-  const cardRef = useRef(null)
+  const cardRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -118,13 +132,16 @@ function VideoCard({ video, index }) {
           <video
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             controls
-            // Hapus atau ubah 'autoPlay' menjadi false
-            // autoPlay // <-- Hapus baris ini
             preload="metadata"
-            onMouseEnter={(e) => e.target.play()}
+            onMouseEnter={(e) => {
+              // Type assertion: Memberitahu TypeScript bahwa e.target adalah HTMLVideoElement
+              (e.target as HTMLVideoElement).play()
+            }}
             onMouseLeave={(e) => {
-              e.target.pause()
-              e.target.currentTime = 0
+              // Type assertion: Memberitahu TypeScript bahwa e.target adalah HTMLVideoElement
+              const videoElement = e.target as HTMLVideoElement;
+              videoElement.pause();
+              videoElement.currentTime = 0;
             }}
           >
             <source src={video.thumbnail} type="video/mp4" />
