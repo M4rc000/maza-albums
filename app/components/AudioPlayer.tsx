@@ -11,10 +11,10 @@ interface Track {
 
 export default function AudioPlayer() {
   const playlist: Track[] = [
-    { title: 'Weird Genius - Sweet Scar', src: '/assets/music/Weird Genius - Sweet Scar.mp3' },
-    { title: 'Lany - You', src: '/assets/music/LANY - You.mp3' },
-    { title: 'Through The Dark - One Direction', src: '/assets/music/Through The Dark - One Direction.mp3' },
-    { title: 'Adrianne Lenker - Anything', src: '/assets/music/Adrianne Lenker - Anything.mp3' },
+    { title: 'Weird Genius - Sweet Scar', src: './assets/music/Weird Genius - Sweet Scar.mp3' },
+    { title: 'Lany - You', src: './assets/music/LANY - You.mp3' },
+    { title: 'Through The Dark - One Direction', src: './assets/music/Through The Dark - One Direction.mp3' },
+    { title: 'Adrianne Lenker - Anything', src: './assets/music/Adrianne Lenker - Anything.mp3' },
   ]
 
   const [currentTrack, setCurrentTrack] = useState(0)

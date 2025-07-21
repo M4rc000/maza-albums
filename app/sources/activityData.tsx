@@ -8,9 +8,9 @@ const activityData = [
   },
   {
     title: "First Anniversary",
-    description: "The first anniversary.",
-    img1: "/assets/images/card/8.webp",
-    img2: "/assets/images/card/10.webp",
+    description: "The first anniversary. We travelled arround bxsea",
+    img1: "./assets/images/card/8.webp",
+    img2: "./assets/images/card/10.webp",
     year: "11 April 2025"
   },
 ];
