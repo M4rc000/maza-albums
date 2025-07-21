@@ -2,15 +2,14 @@ export default function Footer() {
     return (
         <footer className="bg-white dark:bg-gray-900">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-                <div className="sm:flex sm:items-center sm:justify-between">
+                <div className="sm:flex sm:items-center sm:justify-center">
                 <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
                     &copy; {new Date().getFullYear()}
                     <a href="https://flowbite.com/" className="hover:underline">
                     &nbsp;Maza&apos;s albums
                     </a>
-                    . All Rights Reserved
                 </span>
-                <div className="flex mt-4 sm:justify-center sm:mt-0">
+                {/* <div className="flex mt-4 sm:justify-center sm:mt-0">
                     <a
                     href="#"
                     className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
@@ -102,7 +101,7 @@ export default function Footer() {
                     </svg>
                     <span className="sr-only">Dribbble account</span>
                     </a>
-                </div>
+                </div> */}
                 </div>
             </div>
             </footer>

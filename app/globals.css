@@ -1,5 +1,36 @@
 @import "tailwindcss";
 
+/* Custom Scrollbar Styles */
+/* Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px; /* Lebar scrollbar vertikal */
+  height: 8px; /* Tinggi scrollbar horizontal */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2); /* Warna track scrollbar (background di belakang thumb) */
+  border-radius: 10px; /* Sudut membulat pada track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(135, 206, 235, 0.7); /* Warna thumb scrollbar (bagian yang bisa digeser), sesuaikan dengan warna biru aktif */
+  border-radius: 10px; /* Sudut membulat pada thumb */
+  border: 2px solid rgba(0, 0, 0, 0.1); /* Garis tepi tipis di sekitar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(135, 206, 235, 1); /* Warna thumb saat hover */
+}
+
+/* Untuk Firefox (berbeda properti) */
+/* Ini akan mempengaruhi semua elemen yang bisa discroll */
+/* Jika Anda ingin lebih spesifik, bisa menargetkan kelas tertentu */
+/* Misalnya: .custom-scroll { scrollbar-color: ...; } */
+* {
+  scrollbar-width: thin; /* 'auto' atau 'thin' */
+  scrollbar-color: rgba(0, 0, 0, 0.9) rgba(0, 0, 0, 0.2); /* thumb color track color */
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

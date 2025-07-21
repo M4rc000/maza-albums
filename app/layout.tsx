@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AntdRegistry } from '@ant-design/nextjs-registry';
+import AudioPlayer from "./components/AudioPlayer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +30,10 @@ export default function RootLayout({
         <link rel="icon" href="./assets/favicon.ico" sizes="any" type="image/x-icon"/>
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <AntdRegistry>{children}</AntdRegistry>
+        <AntdRegistry>
+          <AudioPlayer/>
+            {children}
+        </AntdRegistry>
       </body>
     </html>
   );

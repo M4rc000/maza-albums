@@ -1,4 +1,5 @@
 import activityData from "../sources/activityData";
+import Image from "next/image";
 
 export default function ActivitySection() {
   return (
@@ -23,12 +24,43 @@ export default function ActivitySection() {
             {/* Activity Content */}
             <div className="ml-6">
               <h4 className="font-bold text-blue-500">{activity.title}</h4>
-              <p className="mt-2 max-w-screen-sm text-sm text-gray-500">
-                {activity.description}
-              </p>
-              <span className="mt-1 block text-sm font-semibold text-blue-500">
-                {activity.year}
-              </span>
+              {activity.img1 == "" ? (
+                <>
+                  <p className="mt-2 max-w-screen-sm text-sm text-gray-500">
+                    {activity.description}
+                  </p>
+                  <span className="mt-1 block text-sm font-semibold text-blue-500">
+                    {activity.year}
+                  </span>
+                </>
+              ) : (
+                <>
+                  <p className="mt-2 max-w-screen-sm text-sm text-gray-500">
+                    {activity.description}
+                  </p>
+                  <span className="mt-1 block text-sm font-semibold text-blue-500 mb-3">
+                    {activity.year}
+                  </span>
+                  <div className="grid grid-cols-2">
+                    <div className="w-full">
+                      <Image
+                        src={activity.img1}
+                        alt={`${activity.title}'s photo`}
+                        width={200}
+                        height={300}
+                        className="rounded-xl mx-1 shadow-xl" />
+                    </div>
+                    <div className="w-full">
+                      <Image
+                        src={activity.img2}
+                        alt={`${activity.title}'s photo`}
+                        width={200}
+                        height={100}
+                        className="rounded-xl mx-1 shadow-xl" />
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         ))}
